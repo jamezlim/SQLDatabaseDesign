@@ -1,0 +1,26 @@
+	These are records listing the unemployment rate, number of houses that
+started construction in the time period, the federal interest rate and addition three 
+fields that describe the percentage change compared to prior year for each indexes. 
+As I was running several queries on my data set I was quite convinced that it was 
+reliable because the indexes were coherent with economic events or historical events 
+that greatly impacted the economy. For example the unemployment rate slightly 
+increased after September of 2001 and federal interest rates dropped drastically in the
+following months. Also the unemployment rate for the years after the ¡®Great Recession¡¯ 
+in September 2008 constantly increased and the number of houses that underwent 
+construction decreased significantly and persistently. If we look at the percentage change
+in number of houses that started construction, it is a negative value for a majority of 
+periods after the incident. Obviously federal interest rates didn¡¯t exceed 1% for over 8 years
+after. In addition the data was coherent with other historical events such as the first and 
+second oil shock as well as the Gulf wars. 
+	The result was in line with my anticipation that number of houses undergoing 
+construction will have a correlation with economic indexes. However, I believe it is not enough
+to predict real estate prices. If I were to continue research on the data, integrating GDP growth
+indexes and real estate prices will greatly enhance the readability of the economic trend 
+and the real estate market. 
+
+URL
+https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf54995796
+
+https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf53d4ddc4
+
+https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf5593dd77

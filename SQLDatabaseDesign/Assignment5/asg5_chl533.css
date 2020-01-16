@@ -1,0 +1,19 @@
+h1 {
+    color: brown;
+    font-size: 2.7em;
+}
+
+button {
+    padding: .7em;
+    
+}
+
+
+
+fieldset{
+    border-color:cornflowerblue;
+}
+
+#comp_label, #sort_label {
+    font-style: italic;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+
+<head>
+    
+    <link rel ="stylesheet" href ="styleSheet.css" type = "text/css" > 
+    <title> Correlation of Economic Indexes </title>
+</head>
+<body>
+<h3><a href = "index.html" > <strong> Back to Home</strong> </a></h3>
+<h1> CSCI-UA.60-1 Fall 2018 Assignment5 </h1>    
+<form id = "user_input" method = "POST" action="asg5_chl533.py">
+    <label for ="start_year" >Enter starting year bigger than 1959 </label>
+        <input type ="number"  name = "start_year" id = "start_year" min = "1960" max ="2017">
+        <br>
+    
+    <label for = "end_year">Enter ending year smaller than 2019</label>
+        <input type = "number" name = "end_year" id ="end_year"  min = "1961" max = "2018">
+        <br>
+        <br>
+    
+    <fieldset>
+        <legend> Which fields would you like to compare </legend>
+            <input type = "checkbox" id ="fields" value = "unemployment_rate" checked > Unemployment Rate <br>
+            <input type = "checkbox" id ="fields" value = "number_of_construction_started"> Number of Housing Consctruction Started <br>
+            <input type = "checkbox" id ="fields" value = "federal_interest_rate"> Federal Interest Rate <br>
+     
+    </fieldset>
+    <br>
+    
+    <label id = "comp_label" for = "computation"> For which field would you like to display percentage change </label>
+        <select name = "computation" id ="computation">
+            <option value = "unemployment_rate"> unemployment rate </option>
+            <option value = "number_of_construction_started"> number of housing construction started </option>
+            <option value = "federal_interest_rate"> federal interest rate </option>
+        </select>
+    <br>
+    <label id ="sort_label" for = "sort"> Sort by </label>
+        <select name = "sort" id ="sort">
+            <option value = "asc"> Ascending </option>
+            <option value = "dsc"> Descending </option>
+        </select> 
+    <br>
+    <br>
+    
+    
+    <button type = "submit"> Click Here for result ! </button>
+    <button type = "reset"> Think again before clicking </button>
+    
+    
+
+
+</form>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

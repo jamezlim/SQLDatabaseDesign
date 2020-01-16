@@ -1,0 +1,203 @@
+MySQL [chl533_db1]> SELECT subscription.subscription_channel_ID, user.user_name ,user.user_account
+    -> FROM user
+    -> INNER JOIN subscription ON user.user_ID = subscription.subscription_user_ID
+    -> WHERE subscription.subscription_channel_ID = 11
+    -> ORDER BY user.user_name;
++-------------------------+-----------+--------------+
+| subscription_channel_ID | user_name | user_account |
++-------------------------+-----------+--------------+
+|                      11 | jill      | jillybean    |
+|                      11 | peter     | spiderman    |
+|                      11 | wang      | wanglaoshi   |
++-------------------------+-----------+--------------+
+
+
+MySQL [chl533_db1]> SELECT c.channel_name, v.video_title, v.video_length
+    -> FROM channel c
+    -> INNER JOIN video v ON c.channel_ID = v.video_channel_ID
+    -> WHERE c.channel_theme = "men's fashion"
+    -> ORDER BY c.channel_name;
++------------------------+-----------------------------------------------+--------------+
+| channel_name           | video_title                                   | video_length |
++------------------------+-----------------------------------------------+--------------+
+| Alex Costa             | 7 Items Guys Need to Stop Wearing             | 00:06:33     |
+| Alex Costa             | 10 Daily Habits to Live a Happier Lifestyle   | 00:06:47     |
+| Teaching Men's Fashion | The 7 Best Fashion Tricks All Men Should Know | 00:06:32     |
+| Teaching Men's Fashion | 8 Free and Easy Ways to Upgrade Your Style    | 00:06:23     |
++------------------------+-----------------------------------------------+--------------+
+
+
+MySQL [chl533_db1]> SELECT c.channel_name, c.channel_theme , s.subscription_user_ID
+    -> FROM channel c
+    -> LEFT JOIN subscription s ON c.channel_ID = s.subscription_channel_ID
+    -> ORDER BY c.channel_name, s.subscription_user_ID;
++------------------------+-------------------+----------------------+
+| channel_name           | channel_theme     | subscription_user_ID |
++------------------------+-------------------+----------------------+
+| Alex Costa             | men's fashion     |                   57 |
+| Alex Costa             | men's fashion     |                   59 |
+| Alex Costa             | men's fashion     |                   71 |
+| BuzzFeedVideo          | various topics    |                   59 |
+| BuzzFeedVideo          | various topics    |                   65 |
+| BuzzFeedVideo          | various topics    |                   71 |
+| Colm Dowling           | drum              |                 NULL |
+| Coop3rdrumm3r          | drum              |                   58 |
+| Coop3rdrumm3r          | drum              |                   68 |
+| CS Dojo                | computer science  |                   59 |
+| CS Dojo                | computer science  |                   72 |
+| Fantastic Music        | music             |                   58 |
+| Fantastic Music        | music             |                   59 |
+| Fantastic Music        | music             |                   65 |
+| Fantastic Music        | music             |                   71 |
+| Fantastic Music        | music             |                   72 |
+| Inside Tech            | product review    |                   59 |
+| Kronten Gaming         | gaming            |                   59 |
+| Kronten Gaming         | gaming            |                   60 |
+| Kronten Gaming         | gaming            |                   68 |
+| League of Legends      | gaming            |                   65 |
+| Lounge Music           | music             |                   60 |
+| Movie RedMonster       | movie review      |                   60 |
+| Movie RedMonster       | movie review      |                   65 |
+| Raybangfitness         | fitness workout   |                   60 |
+| Raybangfitness         | fitness workout   |                   68 |
+| Raybangfitness         | fitness workout   |                   72 |
+| Rizknows               | product review    |                 NULL |
+| Teaching Men's Fashion | men's fashion     |                   58 |
+| Teaching Men's Fashion | men's fashion     |                   59 |
+| Teaching Men's Fashion | men's fashion     |                   71 |
+| Thomas DeLauer         | fitness workout   |                 NULL |
++------------------------+-------------------+----------------------+
+
+
+MySQL [chl533_db1]> SELECT u.user_name, u.user_account, u.user_age, s.subscription_channel_ID
+    -> FROM user u
+    -> LEFT JOIN subscription s ON u.user_ID = s.subscription_user_ID
+    -> ORDER BY u.user_name, s.subscription_channel_ID;
++-----------+--------------+----------+-------------------------+
+| user_name | user_account | user_age | subscription_channel_ID |
++-----------+--------------+----------+-------------------------+
+| dongwoo   | ddong        |       28 |                      17 |
+| dongwoo   | ddong        |       28 |                      18 |
+| dongwoo   | ddong        |       28 |                      22 |
+| edward    | pcedward     |       33 |                    NULL |
+| jack      | beanjack     |       52 |                      15 |
+| jack      | beanjack     |       52 |                      17 |
+| jack      | beanjack     |       52 |                      19 |
+| jack      | beanjack     |       52 |                      21 |
+| jack      | beanjack     |       52 |                      27 |
+| jamie     | jamma        |       18 |                      13 |
+| jamie     | jamma        |       18 |                      22 |
+| jamie     | jamma        |       18 |                      25 |
+| jerom     | jer60        |       65 |                    NULL |
+| jill      | jillybean    |       23 |                      11 |
+| jim       | jinujang     |       22 |                    NULL |
+| joanne    | jojo         |       12 |                    NULL |
+| lasputin  | russian      |       30 |                    NULL |
+| lily      | gummybears   |        9 |                      13 |
+| lily      | gummybears   |        9 |                      15 |
+| lily      | gummybears   |        9 |                      17 |
+| patty     | pattyburger  |       32 |                    NULL |
+| peter     | spiderman    |       25 |                      11 |
+| peter     | spiderman    |       25 |                      12 |
+| peter     | spiderman    |       25 |                      15 |
+| peter     | spiderman    |       25 |                      18 |
+| peter     | spiderman    |       25 |                      20 |
+| peter     | spiderman    |       25 |                      22 |
+| peter     | spiderman    |       25 |                      25 |
+| racheal   | rachatta     |        5 |                    NULL |
+| richard   | richyrich    |       10 |                    NULL |
+| wang      | wanglaoshi   |       20 |                      11 |
+| wang      | wanglaoshi   |       20 |                      12 |
+| wang      | wanglaoshi   |       20 |                      22 |
+| wang      | wanglaoshi   |       20 |                      25 |
+| zack      | zackfiles    |       38 |                      12 |
+| zack      | zackfiles    |       38 |                      19 |
+| zack      | zackfiles    |       38 |                      22 |
+| zack      | zackfiles    |       38 |                      24 |
++-----------+--------------+----------+-------------------------+
+
+
+MySQL [chl533_db1]> SELECT c.channel_name, c.channel_theme, u.user_age, u.user_gender
+    -> FROM channel c
+    -> INNER JOIN subscription s ON c.channel_ID = s.subscription_channel_ID
+    -> INNER JOIN user u ON u.user_ID = s.subscription_user_ID
+    -> ORDER BY c.channel_name, u.user_age;
++------------------------+-------------------+----------+-------------+
+| channel_name           | channel_theme     | user_age | user_gender |
++------------------------+-------------------+----------+-------------+
+| Alex Costa             | men's fashion     |       20 | female      |
+| Alex Costa             | men's fashion     |       23 | female      |
+| Alex Costa             | men's fashion     |       25 | male        |
+| BuzzFeedVideo          | various topics    |       20 | female      |
+| BuzzFeedVideo          | various topics    |       25 | male        |
+| BuzzFeedVideo          | various topics    |       38 | male        |
+| Coop3rdrumm3r          | drum              |        9 | female      |
+| Coop3rdrumm3r          | drum              |       18 | female      |
+| CS Dojo                | computer science  |       25 | male        |
+| CS Dojo                | computer science  |       28 | male        |
+| Fantastic Music        | music             |       18 | female      |
+| Fantastic Music        | music             |       20 | female      |
+| Fantastic Music        | music             |       25 | male        |
+| Fantastic Music        | music             |       28 | male        |
+| Fantastic Music        | music             |       38 | male        |
+| Inside Tech            | product review    |       25 | male        |
+| Kronten Gaming         | gaming            |        9 | female      |
+| Kronten Gaming         | gaming            |       25 | male        |
+| Kronten Gaming         | gaming            |       52 | male        |
+| League of Legends      | gaming            |       38 | male        |
+| Lounge Music           | music             |       52 | male        |
+| Movie RedMonster       | movie review      |       38 | male        |
+| Movie RedMonster       | movie review      |       52 | male        |
+| Raybangfitness         | fitness workout   |        9 | female      |
+| Raybangfitness         | fitness workout   |       28 | male        |
+| Raybangfitness         | fitness workout   |       52 | male        |
+| Teaching Men's Fashion | men's fashion     |       18 | female      |
+| Teaching Men's Fashion | men's fashion     |       20 | female      |
+| Teaching Men's Fashion | men's fashion     |       25 | male        |
++------------------------+-------------------+----------+-------------+
+
+
+MySQL [chl533_db1]> SELECT video_title, video_like_number
+    -> FROM video
+    -> WHERE video_like_number >
+    ->     (SELECT AVG(video_like_number) FROM video)
+    -> ORDER BY video_title, video_like_number;
++-----------------------------------------------+-------------------+
+| video_title                                   | video_like_number |
++-----------------------------------------------+-------------------+
+| 7 Items Guys Need to Stop Wearing             |              8400 |
+| 8 Free and Easy Ways to Upgrade Your Style    |              9200 |
+| Nirvana- Smells Like Teen Spirit Drum Cover   |              9700 |
+| Numb - Linkin Park Drum Cover                 |             11900 |
+| The 7 Best Fashion Tricks All Men Should Know |             14000 |
+| Toto- Africa Drum Cover                       |              6600 |
++-----------------------------------------------+-------------------+
+
+
+MySQL [chl533_db1]> SELECT channel_name, channel_theme
+    -> FROM channel
+    -> WHERE channel_ID IN
+    -> (SELECT video_channel_ID FROM video WHERE video_like_number > 5000)
+    -> ORDER BY channel_name;
++------------------------+----------------+
+| channel_name           | channel_theme  |
++------------------------+----------------+
+| Alex Costa             | men's fashion  |
+| Colm Dowling           | drum           |
+| Coop3rdrumm3r          | drum           |
+| Teaching Men's Fashion | men's fashion  |
++------------------------+----------------+
+
+
+MySQL [chl533_db1]> SELECT c.channel_name, c.channel_theme, c.channel_views, AVG(u.user_age) AS average_age FROM channel c
+    -> INNER JOIN subscription s ON c.channel_ID = s.subscription_channel_ID
+    -> INNER JOIN user u ON u.user_ID = s.subscription_user_ID
+    -> WHERE u.user_age < 12
+    -> ORDER BY c.channel_name;
++---------------+---------------+---------------+-------------+
+| channel_name  | channel_theme | channel_views | average_age |
++---------------+---------------+---------------+-------------+
+| Coop3rdrumm3r | drum          |     424329383 |      9.0000 |
++---------------+---------------+---------------+-------------+
+
+

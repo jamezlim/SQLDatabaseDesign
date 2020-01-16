@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+
+<head>
+    
+    <link rel ="stylesheet" href ="asg5_chl533.css" type = "text/css" > 
+    <title> Assignment #5 - 1 </title>
+</head>
+<body>
+<header><h1> Part1. SQLite </h1></header>
+<h3><a href = "index.html" > <strong> Back to Home</strong> </a></h3>
+    
+<P>     The unemployment index as well as the federal interest rate is a key indicator of the economic well-being. Normally they have a inverse relation as the 'Federal Open Market Committee' regulate economic overheating by increasing federal interest rates and unemployment is relatively low due to the good condition of the overall economy. The dataset is reliable as the indexes provideded are coherent with major historical events that had great impact on the economy. Intuitively the number of houses that start construction will increase as the economy prospers and vice versa. The current representation of data holds importance because it not only shows a correlating trend in these three indexes but also questions in reverse whether the number of houses starting construction can act as a pre-indicator of the economic status. The table provides percentage change in these indexes comparing each time period (months)
+</P>
+<br>
+    
+<form id = "user_input" method = "POST" action="asg5_chl533.py">
+    <label id ="display_label" for = "display"> Would you like to display all data ? </label>
+        <select name = "display" id ="display">
+            <option value = "yes"> Yes </option>
+            <option value = "no"> no </option>
+        </select> 
+        <br>
+
+
+    <label for ="start_year" >Enter starting year bigger than 1959 </label>
+        <input type ="number"  name = "start_year" id = "start_year" min = "1960" max ="2017">
+        <br>
+    
+    <label for = "end_year">Enter ending year smaller than 2019</label>
+        <input type = "number" name = "end_year" id ="end_year"  min = "1961" max = "2018">
+        <br>
+        <br>
+    
+    <fieldset>
+        <legend> Which fields would you like to compare </legend>
+            <!-- if no value it will take what is shown -->
+            <input type = "checkbox" name = "unemploymentRate" id ="fields" value = ",unemploymentRate" checked > Unemployment Rate <br>
+            <input type = "checkbox" name = "numOfConstruction" id ="fields" value = ",numOfConstruction"> Number of Housing Consctruction Started <br>
+            <input type = "checkbox" name = "fedInterestRate" id ="fields" value = ",fedInterestRate"> Federal Interest Rate <br>
+     
+    </fieldset>
+    <br>
+    
+    <label id = "comp_label" for = "computation"> * For which field would you like to display percentage change : </label>
+        <select name = "computation" id ="computation">
+            <option value = ",changeInUnemploymentRate"> unemployment rate </option>
+            <option value = ",changeInNumOfConstruction"> number of housing construction started </option>
+            <option value = ",changeInFedInterestRate"> federal interest rate </option>
+        </select>
+    <br>
+    <label id ="sort_label" for = "sort"> * Sort by </label>
+        <select name = "sort" id ="sort">
+            <option value = "ASC"> Ascending </option>
+            <option value = "DESC"> Descending </option>
+        </select> 
+    <br>
+    <br>
+    
+    
+    <button type = "submit"> Click Here for result ! </button>
+    <button type = "reset"> Think again before clicking </button>
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4 style = "border-bottom: none"> Links to Data Source </h4>
+        <ul style = "padding-bottom: 25px" > 
+            <li> <a href = "https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf54995796" target="_blank"> <em> https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf54995796 </em> </a></li>
+            <li> <a href = "https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf53d4ddc4" target="_blank"> <em>https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf53d4ddc4 </em> </a> </li>
+            <li> <a href = "https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf5593dd77" target="_blank"> <em> https://statisticaldatasets-data-planet-com.proxy.library.nyu.edu/dataplanet/Link?id=cf5593dd77</em></a></li>
+        </ul>   
+    
+    
+
+
+</form>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

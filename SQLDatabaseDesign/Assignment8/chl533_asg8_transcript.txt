@@ -1,0 +1,47 @@
+login as: chl533
+Using keyboard-interactive authentication.
+Password:
+Access denied
+Using keyboard-interactive authentication.
+Password:
+Last failed login: Sun Dec  9 22:11:07 EST 2018 from 10-16-204-62.dynapool.wireless.nyu.edu on ssh:notty
+
+>db.earthquakes.find({"COUNTRY":"MEXICO"}).count()
+61
+
+> db.earthquakes.find({"COUNTRY":"MEXICO"},{"COUNTRY":1,"YEAR":1,"EQ_MAG":1}).sort({"EQ_MAG":-1}).limit(5)
+{ "_id" : "2804", "YEAR" : 1907, "EQ_MAG" : 8.3, "COUNTRY" : "MEXICO" }
+{ "_id" : "3492", "YEAR" : 1932, "EQ_MAG" : 8.2, "COUNTRY" : "MEXICO" }
+{ "_id" : "2833", "YEAR" : 1908, "EQ_MAG" : 8.1, "COUNTRY" : "MEXICO" }
+{ "_id" : "5076", "YEAR" : 1985, "EQ_MAG" : 8.1, "COUNTRY" : "MEXICO" }
+{ "_id" : "2932", "YEAR" : 1911, "EQ_MAG" : 7.9, "COUNTRY" : "MEXICO" }
+
+> db.earthquakes.find({"STATE":"AK"},{_id:0,"LOCATION_NAME":1,"YEAR":1,"EQ_MAG":1}).sort({"EQ_MAG":-1}).limit(3)
+{ "YEAR" : 1957, "EQ_MAG" : 9.1, "LOCATION_NAME" : "ALASKA" }
+{ "YEAR" : 2002, "EQ_MAG" : 8.5, "LOCATION_NAME" : "ALASKA:  SLANA, MENTASTA LAKE, FAIRBANKS" }
+{ "YEAR" : 1964, "EQ_MAG" : 8.4, "LOCATION_NAME" : "ALASKA" }
+
+>  db.earthquakes.find({$or:[{"STATE":"WA"},{"STATE":"AK"},{"STATE":"CA"},{"STATE":"OR"}]}).count()
+97
+
+> db.earthquakes.find({$and:[{"COUNTRY":"CANADA"},{"YEAR":{$lt:1960}}]},{_id:0,"YEAR":1,"LOCATION_NAME":1,"EQ_MAG":1})
+{ "YEAR" : 1949, "EQ_MAG" : 8.1, "LOCATION_NAME" : "CANADA:  QUEEN CHARLOTTE ISLANDS" }
+{ "YEAR" : 1933, "EQ_MAG" : 7.4, "LOCATION_NAME" : "CANADA:  BAFFIN BAY" }
+{ "YEAR" : 1938, "EQ_MAG" : 6.3, "LOCATION_NAME" : "CANADA:  BRITISH COLUMBIA" }
+{ "YEAR" : 1928, "EQ_MAG" : 5.8, "LOCATION_NAME" : "BRITISH COLUMBIA" }
+
+> db.earthquakes.distinct("COUNTRY")
+[ "USA", "MEXICO", "CANADA" ]
+
+> db.earthquakes.find({$and:[{"COUNTRY":"USA"},{"YEAR":{$in:[1980,1990,1995]}}]},{_id:0,"YEAR":1,"LOCATION_NAME":1,"EQ_MAG":1})
+{ "YEAR" : 1980, "EQ_MAG" : 7.2, "LOCATION_NAME" : "CALIFORNIA:  NORTH COAST" }
+{ "YEAR" : 1980, "EQ_MAG" : 6.1, "LOCATION_NAME" : "CALIFORNIA:  MAMMOTH LAKES" }
+{ "YEAR" : 1980, "EQ_MAG" : 5.9, "LOCATION_NAME" : "CALIFORNIA:  LIVERMORE" }
+{ "YEAR" : 1995, "EQ_MAG" : 5.8, "LOCATION_NAME" : "ALASKA:  FAIRBANKS NORTH STAR COUNTY" }
+{ "YEAR" : 1990, "EQ_MAG" : 5.5, "LOCATION_NAME" : "CALIFORNIA:  S,  CLAREMONT,  COVINA" }
+{ "YEAR" : 1980, "EQ_MAG" : 5.2, "LOCATION_NAME" : "WASHINGTON:  MT ST HELENS" }
+{ "YEAR" : 1980, "EQ_MAG" : 5.1, "LOCATION_NAME" : "KENTUCKY:  MAYSVILLE" }
+
+
+
+

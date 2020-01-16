@@ -1,0 +1,89 @@
+
+header {     
+        color: rgb(244, 240, 232);
+        background: url("skyline.JPG");
+        background-size: contain;
+        border: 2px solid;
+        border-color: rgb(52, 114, 168);
+        padding-left: 10px;
+}
+
+a{
+    color: rgb(249, 106, 34);
+}
+img {
+     margin-left: 15px;
+}
+
+h3 {
+    margin-left: 15px;
+    color: rgb(112, 166, 255);
+}
+
+h4{
+    margin-left: 15px;
+    color: rgb(255, 255, 255);
+}
+
+body {
+    color: rgb(255, 255, 255);
+    background-image: url('nature.jpg');
+}
+
+p{
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+    width: 95%;
+    
+    
+}
+
+.rightAlign {
+    text-align: right;
+    padding-right: 15px;
+}
+
+dt {
+    font-weight: 900;
+    padding-left: 15px;
+}
+
+dd {
+    text-indent: 40px;
+}
+
+button {
+    padding: .7em;
+    font-weight: bold;
+
+    
+}
+
+fieldset{
+    border-color: rgb(249, 106, 34);
+}
+
+#comp_label, #sort_label {
+    font-style: italic;
+}
+
+table, td, th {    
+    		border: 1px solid #ddd;
+    		text-align: left;
+}
+
+table {
+	border-collapse: collapse;
+	width: 90%;
+}
+
+th, td {
+	padding: 15px;
+}
+
+th {
+	text-align:center;
+	background-color: rgb(249, 106, 34);
+}
+
